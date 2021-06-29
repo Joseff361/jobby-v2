@@ -1,0 +1,20 @@
+/* TRUNCATING THE CARDS CONTENT*/
+.truncate-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-body{
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

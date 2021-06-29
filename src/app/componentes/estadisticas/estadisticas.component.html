@@ -1,0 +1,103 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="row mt-5">
+    <div class="mt-5">
+        <div class="mt-5">
+            <div class="row">
+                <div class="col-md-7 mt-4">
+                    <h1 class="display-2 man">Bienvenido!</h1>
+                <p class="h3">Accede a información acerca de los puestos de trabajo más solicitados
+                    relacionados a especialidades de las carreras de TI, rankings semestrales, tendencias,
+                    estadísticas y más.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="assets/img/man.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 text-center">
+    <div class="display-5 mt-4 man-2">ESTADISTICAS</div>
+</div>
+
+<div class="row">
+    <div class="mx-auto my-5">
+        <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    
+            <!-- BARCHAR -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-9 mx-auto">
+                            <div class="text-center">
+                                <h2>Grafico de Barras</h2>
+                            </div>
+                            <div style="display: block">
+                                <canvas baseChart
+                                    [datasets]="barChartData"
+                                    [labels]="barChartLabels"
+                                    [options]="barChartOptions"
+                                    [legend]="barChartLegend"
+                                    [chartType]="barChartType">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIE CHART -->
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-9 mx-auto">
+                            <div class="text-center">
+                                <h2>Grafico Circular</h2>
+                            </div>
+                            <div class="chart">
+                                <canvas baseChart
+                                  [data]="pieChartData"
+                                  [labels]="pieChartLabels"
+                                  [chartType]="pieChartType"
+                                  [options]="pieChartOptions"
+                                  [colors]="pieChartColors"
+                                  [legend]="pieChartLegend">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- RADAR CHART -->
+                  <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-9 mx-auto">
+                            <div class="text-center">
+                                <h2>Grafico de Radar</h2>
+                            </div>
+                            <div style="display: block">
+                                <canvas baseChart
+                                  [datasets]="radarChartData"
+                                  [options]="radarChartOptions"
+                                  [labels]="radarChartLabels"
+                                  [chartType]="radarChartType">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+            <!-- BUTTONS -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<app-info-areas1></app-info-areas1>

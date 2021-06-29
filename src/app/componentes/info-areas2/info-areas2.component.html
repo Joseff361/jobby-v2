@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <p class="display-5 color-2">Ofertas publicadas</p>
+    <div class="row my-4" *ngIf="ofertasEmpleo">
+        <div class="col-md-12 my-4" *ngFor="let oferta of ofertasEmpleo">
+            <div class="card">
+                <div class="card-header">{{oferta.empresa.nombreDeEmpresa}}</div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>Area: </b>{{oferta.area}}</h5>
+                    <p class="card-title"><b>Descripcion: </b>{{oferta.descripcion}}</p>
+                    <p class="card-title"><b>Jornada: </b>{{oferta.jornada}}</p>
+                    <p class="card-title"><b>Salario: </b>{{oferta.salario}}</p>
+                    <p class="card-title"><b>Requisitos: </b>{{oferta.requisitos}}</p>
+                    <p class="card-title"><b>Beneficios: </b>{{oferta.beneficios}}</p>
+                    <h6 class="card-subtitle mb-2 text-muted mt-2">{{oferta.empresa.locacion}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted mt-2">{{oferta.empresa.sitioWeb}}</h6>
+                    <div class="botones">
+                        <button (click)="verPostulantes(oferta)" class="btn btn-success">Ver Postulantes</button>                    
+                        <button class="btn btn-danger mx-3">Eliminar Oferta</button>                    
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p class="card-title"><b>Fecha: </b>{{oferta.fecha | date}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

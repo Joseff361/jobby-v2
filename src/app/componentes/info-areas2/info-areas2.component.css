@@ -1,0 +1,8 @@
+.color-2{
+    color: rgb(1, 133, 200);
+}
+
+.botones{
+    display: flex;
+    justify-content: flex-start;
+}

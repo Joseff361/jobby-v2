@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       
+      <!-- BRAND -->  
+      <a class="navbar-brand" routerLink="/estadisticas" routerLinkActive="active"> 
+        <i class="fa fa-briefcase" aria-hidden="true"></i> Jobby</a>
+
+      <!-- COLLAPSE BUTTON-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- COLLAPSE -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a routerLink="/scraping" routerLinkActive="active" class="nav-link"  aria-current="page">Ofertas de Empleo</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/tensorflow" routerLinkActive="active" class="nav-link"  aria-current="page">
+                  <i class="fa fa-circle-thin" aria-hidden="true"></i> Proyecciones</a>
+            </li>
+        </ul>
+
+        <!-- LOGIN -->
+        <ul class="navbar-nav ml-auto">
+            <li class="navbar-item" *ngIf="!logeado"> 
+                <a class="nav-link " routerLink="/empresas" routerLinkActive="active">
+                    <i class="fa fa-building" ></i> Soy Empresa</a>
+            </li>
+            <li class="navbar-item" *ngIf="!logeado"> 
+                <a class="nav-link" routerLink="/estudiantes" routerLinkActive="active">
+                    <i class="fa fa-graduation-cap"></i> Soy Estudiante</a>
+            </li>
+            <li class="navbar-item" *ngIf="!logeado"> 
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Log in</a>
+            </li>
+            <li class="navbar-item" *ngIf="logeado"> 
+              <a class="nav-link" routerLink="/usuarios" routerLinkActive="active">
+                  <i class="fa fa-user" aria-hidden="true"></i> {{usuario}}</a>
+            </li>
+            <li class="navbar-item" *ngIf="logeado"> 
+              <a class="nav-link"  routerLinkActive="active" routerLink='/estadisticas' (click)="logOut($event)">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>

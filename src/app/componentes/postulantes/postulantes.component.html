@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h3>Lista de Postulantes</h3>
+    <div class="row">
+        <div *ngFor="let estudiante of estudiantes" class="col-md-6 px-2 my-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5><b>Apellidos y Nombres: </b>{{estudiante.apellido}} {{estudiante.nombre}}</h5>
+                    <h3>Curriculum Vitae</h3>
+                    <div *ngIf="estudiante.curriculum">
+                        <p><b>Direccion: </b>{{estudiante.curriculum.direccion}}</p>
+                        <p><b>Email: </b>{{estudiante.curriculum.email}}</p>
+                        <p><b>Formacion: </b>{{estudiante.curriculum.formacion}}</p>
+                        <p><b>Experiencia: </b>{{estudiante.curriculum.experiencia}}</p>
+                        <p><b>Habilidaes: </b>{{estudiante.curriculum.habilidades}}</p>
+                        <p><b>Idiomas: </b>{{estudiante.curriculum.idiomas}}</p>
+                    </div>
+                    <div *ngIf="!estudiante.curriculum">
+                        <div class="alert alert-danger" role="alert">El postulante no cuenta con curriculum vitae</div>
+                    </div>
+                    <div class="div">
+                        <button (click)="volver()" class="btn btn-danger">Regresar</button>&nbsp;
+                        <button class="btn btn-secondary">Ponerse en contacto</button>
+                    </div>
+                </div> 
+            </div>       
+        </div>
+    </div>
+</div>

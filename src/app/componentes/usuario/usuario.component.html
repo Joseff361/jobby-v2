@@ -1,0 +1,38 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<!-- ESTUDIANTE -->
+<div class="row my-5" *ngIf="tipo_estudiante && estudiante">
+    <div class="col-md-8 mx-auto">
+        <app-curriculum [estudiante]="estudiante"></app-curriculum>
+    </div>
+</div>
+
+<!-- EMPRESA -->
+<div class="row my-5" *ngIf="tipo_empresa">
+
+    <!-- DATOS EMPRESA -->
+    <div class="col-md-4 mx-auto mt-1">
+        <h2 class="color-1">Descripcion</h2>
+        <div class="card mt-5" *ngIf="empresaDto">
+            <div class="card-header text-center">{{empresaDto.usuario.tipo}}</div>
+            <div class="card-body">
+                <h5 class="card-title text-center mb-2">{{empresaDto.nombreDeEmpresa}}</h5>
+                <img src="assets/img/company.png" alt="">
+                <h6 class="card-subtitle mb-2 text-muted text-center mt-2">{{empresaDto.locacion}}</h6>
+                <h5><b>Descripcion: </b>{{empresaDto.descripcion}}</h5>
+                <h5><b>Dominio: </b>{{empresaDto.sitioWeb}}</h5>
+                <h5><b>RUC: </b>{{empresaDto.ruc}}</h5>
+                <h5><b>CORREO: </b>{{empresaDto.usuario.correo}}</h5>
+            </div>
+        </div>
+    </div>
+    
+    <!-- OFERTA EMPRESA-->
+    <div class="col-md-7 mx-auto" *ngIf="empresaDto">
+        <app-oferta-empresa></app-oferta-empresa>
+    </div>
+</div>
+
+<div class="row my-5" *ngIf="empresaDto">
+    <app-info-areas2 [IdTipo]="IdTipo"></app-info-areas2>
+</div>

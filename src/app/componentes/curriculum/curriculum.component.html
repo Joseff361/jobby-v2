@@ -1,0 +1,106 @@
+<div class="row">
+    <h2 class="color-2">Actualizar Curriculum Vitae</h2>
+    <div class="card">
+        <div class="card-body">
+            <form novalidate [formGroup]="formularioBase" #fform="ngForm" (ngSubmit)="onSubmit()">
+                
+                <!-- APELLIDOS Y NOMBRES -->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Apellidos y nombres</label>
+                  <input type="text" class="form-control" value="{{estudiante.apellido}}, {{estudiante.nombre}}" disabled>
+                </div>
+
+                <!-- DIRECCION -->
+                <div class="mb-3">
+                    <label class="form-label">Direccion</label>
+                    <input formControlName="direccion" type="text" class="form-control" />
+                    <div *ngIf="formErrors.direccion" class="alert alert-danger mt-2" role="alert">{{formErrors.direccion}}</div> 
+                </div>
+
+                <!-- EMAIL -->
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <input formControlName="email" type="text" class="form-control"  />
+                    <div *ngIf="formErrors.email" class="alert alert-danger mt-2" role="alert">{{formErrors.email}}</div> 
+                </div>
+
+                <!-- FORMACION -->
+                <div class="mb-3">
+                    <label class="form-label">Formacion</label>
+                    <input formControlName="formacion" type="text" class="form-control"  />
+                    <div *ngIf="formErrors.formacion" class="alert alert-danger mt-2" role="alert">{{formErrors.formacion}}</div> 
+                </div>
+
+                <!-- EXPERIENCIA -->
+                <div class="mb-3">
+                    <label class="form-label">Experiencia</label>
+                    <input formControlName="experiencia" type="text" class="form-control"  />
+                    <div *ngIf="formErrors.experiencia" class="alert alert-danger mt-2" role="alert">{{formErrors.experiencia}}</div> 
+                </div>
+                
+                <!-- HABILIDADES -->
+                <div class="mb-3">
+                    <label class="form-label">Habilidades</label>
+                    <input formControlName="habilidades" type="text" class="form-control"  />
+                    <div *ngIf="formErrors.habilidades" class="alert alert-danger mt-2" role="alert">{{formErrors.habilidades}}</div> 
+                </div>
+
+                <!-- IDIOMAS -->
+                <div class="mb-3">
+                    <label class="form-label">Idiomas</label>
+                    <input formControlName="idiomas" type="text" class="form-control"  />
+                    <div *ngIf="formErrors.idiomas" class="alert alert-danger mt-2" role="alert">{{formErrors.idiomas}}</div> 
+                </div>
+
+                <!-- SUBMIT -->
+                <div class="text-center">
+                    <button (click)="cancelar()" class="btn btn-danger" type="button">Cancelar</button> &nbsp;
+                    <button (click)="editarFormulario()" class="btn btn-warning" type="button">Editar CV</button> &nbsp;
+                    <button [disabled]="formularioBase.invalid" class="btn btn-primary" type="submit">Guardar Cambios</button>
+                </div>
+
+                <div class="mt-3 text-center">
+                    <div>
+                        <div class="spinner" *ngIf="cargando">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </div>
+                    <div *ngIf="mensajeError" class="alert alert-danger" role="alert">{{mensajeError}}</div>
+                    <div *ngIf="mensajeExito" class="alert alert-success" role="alert">{{mensajeExito}}</div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <p class="display-5 color-2">Ofertas postuladas</p>
+        <div class="row my-4" *ngIf="ofertasEmpleo">
+            <div class="col-md-12 my-4" *ngFor="let oferta of ofertasEmpleo">
+                <div class="card">
+                    <div class="card-header">{{oferta.empresa.nombreDeEmpresa}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Area: </b>{{oferta.area}}</h5>
+                        <p class="card-title"><b>Descripcion: </b>{{oferta.descripcion}}</p>
+                        <p class="card-title"><b>Jornada: </b>{{oferta.jornada}}</p>
+                        <p class="card-title"><b>Salario: </b>{{oferta.salario}}</p>
+                        <p class="card-title"><b>Requisitos: </b>{{oferta.requisitos}}</p>
+                        <p class="card-title"><b>Beneficios: </b>{{oferta.beneficios}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mt-2">{{oferta.empresa.locacion}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted mt-2">{{oferta.empresa.sitioWeb}}</h6>
+                        <button class="btn btn-danger">Elimnar Postulacion</button>                    
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-title"><b>Fecha: </b>{{oferta.fecha | date}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

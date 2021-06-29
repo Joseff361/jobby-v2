@@ -1,0 +1,71 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div *ngIf="misProyecciones" class="container mt-5">
+
+    <!-- INTRODUCCION -->
+    <h1>Proyecciones Estadisticas</h1>
+    <p class="badge bg-warning text-dark">Seccion Premium</p>
+    <div class="row mt-5">
+        <div class="col-md-5">
+            <img src="assets/img/tensorflow.gif" alt="" style="width: 100%;">
+        </div>
+        <div class="col-md-7 px-3 my-auto" style="text-align: justify;">
+            <p>Las proyecciones son estimaciones que sirven en situaciones de incertidumbre. Son usados en prácticas que demandan el pronóstico diario de negocios y planes de demanda; sin embargo, existen otros ámbitos en donde se aplica.</p>
+            <p><b>En esta seccion, se plantea exponer una serie de pronosticos referidos a la cantidad de demanda que tendra cada area de empleo respecto al siguiente mes</b></p>
+        </div>
+    </div>
+
+    <!-- RESULTADOS -->
+    <h1 class="my-5">Estimaciones</h1>
+
+    <!-- GRAFICO DE AREA POLAR -->
+    <h3 class="text-center mt-3">Grafico de area Polar - <b>{{misProyecciones[0].fecha}}</b></h3>
+    <div class="text-center"><p class="badge bg-warning text-dark">Premium</p></div>
+    <div class="row mt-5">
+        <div class="col-md-11 mx-auto">
+            <div>
+                <div>
+                <div style="display: block">
+                    <canvas baseChart
+                    [data]="polarAreaChartData"
+                    [labels]="polarAreaChartLabels"
+                    [legend]="polarAreaLegend"
+                    [chartType]="polarAreaChartType">
+                    </canvas>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRAFICO DE BARRAS, PENSALAS-->
+    <h3 class="text-center mt-5">Grafico de area Polar - <b>{{misProyecciones[0].fecha}}</b></h3>
+    <div class="text-center"><p class="badge bg-warning text-dark">Premium</p></div>
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div style="display: block">
+                <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+                </canvas>
+              </div>
+        </div>
+    </div>
+
+        <!-- GRAFICO DE  DONA-->
+        <h3 class="text-center mt-5">Grafico de Dona - <b>{{misProyecciones[0].fecha}}</b></h3>
+        <div class="text-center"><p class="badge bg-warning text-dark">Premium</p></div>
+        <div class="row my-5">
+            <div class="col-md-10 mx-auto">
+                <div style="display: block">
+                    <canvas baseChart
+                      [data]="doughnutChartData"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType">
+                    </canvas>
+                  </div>
+            </div>
+        </div>
+</div>

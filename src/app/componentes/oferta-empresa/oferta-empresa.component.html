@@ -1,0 +1,89 @@
+<div class="row">
+    <h2 class="color-2">Anunciar Oferta Laboral!</h2>
+    <div class="card">
+        <div class="card-body">
+            <form novalidate [formGroup]="formularioOE" #fform="ngForm" (ngSubmit)="onSubmit()">
+                
+                <!-- DESCRIPCION -->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                  <textarea  formControlName="Descripcion" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
+                  <div id="emailHelp" class="form-text">Detalle cuales seran las funciones que va a desarrollar el empleado .</div>
+                  <div *ngIf="formErrors.Descripcion" class="alert alert-danger mt-2" role="alert">{{formErrors.Descripcion}}</div> 
+                </div>
+
+                <div class="row mb-3">
+                    <!-- JORNADA -->
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label">Jornada</label>
+                        <input formControlName="Jornada" type="text" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="formErrors.Jornada" class="alert alert-danger mt-2" role="alert">{{formErrors.Jornada}}</div> 
+                    </div>
+
+                      <!-- SALARIO -->
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label">Salario</label>
+                        <input formControlName="Salario" type="text" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="formErrors.Salario" class="alert alert-danger mt-2" role="alert">{{formErrors.Salario}}</div> 
+                    </div>
+                </div>
+
+                <!-- REQUISITOS -->
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Requisitos</label>
+                    <textarea formControlName="Requisitos" type="text" class="form-control" id="exampleInputPassword1"></textarea>
+                    <div *ngIf="formErrors.Requisitos" class="alert alert-danger mt-2" role="alert">{{formErrors.Requisitos}}</div> 
+                </div>
+
+                <!-- BENEFICIOS -->
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Beneficios</label>
+                    <textarea formControlName="Beneficios" type="text" class="form-control" id="exampleInputPassword1"></textarea>
+                    <div *ngIf="formErrors.Beneficios" class="alert alert-danger mt-2" role="alert">{{formErrors.Beneficios}}</div> 
+                </div>
+
+                <div class="row mb-3">
+                    <!-- AREA -->
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label">Area</label>
+                        <select formControlName="Area" class="form-select" aria-label="Default select example">
+                            <option value="INTELIGENCIA ARTIFICIAl">INTELIGENCIA ARTIFICIAl</option>
+                            <option value="INGENIERIA DE CALIDAD">INGENIERIA DE CALIDAD</option>
+                            <option value="GERENCIA DE PROYECTOS DE TI">GERENCIA DE PROYECTOS DE TI</option>
+                            <option value="SEGURIDAD INFORMATICA">SEGURIDAD INFORMATICA</option>
+                            <option value="SERVIDORES Y REDES">SERVIDORES Y REDES</option>
+                            <option value="ANALISTA DE BASE DE DATOS">ANALISTA DE BASE DE DATOS</option>
+                            <option value="INTELIGENCIA DE NEGOCIOS">INTELIGENCIA DE NEGOCIOS</option>
+                            <option value="DESARROLLADOR DE SOFTWARE">DESARROLLADOR DE SOFTWARE</option>
+                        </select>
+                    </div>
+
+                    <!-- FECHA -->
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="exampleInputPassword1">
+                    </div>
+                </div>
+
+                <!-- SUBMIT -->
+                <div class="text-center mb-2">
+                    <button  [disabled]="formularioOE.invalid" type="submit" class="btn btn-primary btn-block">Publicar</button>
+                </div>
+                
+                <!-- RESULT -->
+                <div class="mt-3 text-center">
+                    <div>
+                        <div class="spinner" *ngIf="cargando">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </div>
+                    <div *ngIf="mensajeError" class="alert alert-danger" role="alert">{{mensajeError}}</div>
+                    <div *ngIf="mensajeExito" class="alert alert-success" role="alert">{{mensajeExito}}</div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
