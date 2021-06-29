@@ -10,7 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-tensorflow',
   templateUrl: './tensorflow.component.html',
-  styleUrls: ['./tensorflow.component.css']
+  styleUrls: ['./tensorflow.component.scss']
 })
 export class TensorflowComponent implements OnInit {
 

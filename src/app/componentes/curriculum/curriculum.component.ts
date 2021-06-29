@@ -9,7 +9,7 @@ import { OfertaPorEmpresa } from 'src/app/shared/Dto/OfertaPorEmpresa';
 @Component({
   selector: 'app-curriculum',
   templateUrl: './curriculum.component.html',
-  styleUrls: ['./curriculum.component.css']
+  styleUrls: ['./curriculum.component.scss']
 })
 export class CurriculumComponent implements OnInit {
 

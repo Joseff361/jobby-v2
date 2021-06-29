@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin-empresas',
   templateUrl: './signin-empresas.component.html',
-  styleUrls: ['./signin-empresas.component.css']
+  styleUrls: ['./signin-empresas.component.scss']
 })
 export class SigninEmpresasComponent implements OnInit {
 

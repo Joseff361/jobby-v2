@@ -5,7 +5,7 @@ import { EstudianteDto } from 'src/app/shared/Dto/EstudianteDto';
 @Component({
   selector: 'app-postulantes',
   templateUrl: './postulantes.component.html',
-  styleUrls: ['./postulantes.component.css']
+  styleUrls: ['./postulantes.component.scss']
 })
 export class PostulantesComponent implements OnInit {
 

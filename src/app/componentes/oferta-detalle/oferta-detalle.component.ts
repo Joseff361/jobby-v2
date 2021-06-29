@@ -10,7 +10,7 @@ import { SesionStorageService } from 'src/app/services/sesion-storage.service';
 @Component({
   selector: 'app-oferta-detalle',
   templateUrl: './oferta-detalle.component.html',
-  styleUrls: ['./oferta-detalle.component.css']
+  styleUrls: ['./oferta-detalle.component.scss']
 })
 export class OfertaDetalleComponent implements OnInit {
   oferta: OfertaPorEmpresa;

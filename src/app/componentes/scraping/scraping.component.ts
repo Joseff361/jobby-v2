@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-scraping',
   templateUrl: './scraping.component.html',
-  styleUrls: ['./scraping.component.css']
+  styleUrls: ['./scraping.component.scss']
 })
 export class ScrapingComponent implements OnInit {
 

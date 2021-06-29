@@ -7,7 +7,7 @@ import { OfertaPorEmpresa } from '../../shared/Dto/OfertaPorEmpresa';
 @Component({
   selector: 'app-info-areas2',
   templateUrl: './info-areas2.component.html',
-  styleUrls: ['./info-areas2.component.css']
+  styleUrls: ['./info-areas2.component.scss']
 })
 export class InfoAreas2Component implements OnInit {
 
