@@ -27,7 +27,9 @@ import { PostulantesComponent } from './componentes/postulantes/postulantes.comp
 import { TensorflowComponent } from './componentes/tensorflow/tensorflow.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UniversidadesComponent } from './componentes/universidades/universidades.component'; // <-- import the module
+import { UniversidadesComponent } from './componentes/universidades/universidades.component';
+import { LoginUnivComponent } from './componentes/login-univ/login-univ.component';
+import { AddBlogComponent } from './componentes/add-blog/add-blog.component'; // <-- import the module
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { UniversidadesComponent } from './componentes/universidades/universidade
     CurriculumComponent,
     PostulantesComponent,
     TensorflowComponent,
-    UniversidadesComponent
+    UniversidadesComponent,
+    LoginUnivComponent,
+    AddBlogComponent
   ],
   imports: [
     BrowserModule,
