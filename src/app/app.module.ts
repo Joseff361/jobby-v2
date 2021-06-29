@@ -26,7 +26,8 @@ import { CurriculumComponent } from './componentes/curriculum/curriculum.compone
 import { PostulantesComponent } from './componentes/postulantes/postulantes.component';
 import { TensorflowComponent } from './componentes/tensorflow/tensorflow.component';
 
-import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UniversidadesComponent } from './componentes/universidades/universidades.component'; // <-- import the module
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
     OfertaDetalleComponent,
     CurriculumComponent,
     PostulantesComponent,
-    TensorflowComponent
+    TensorflowComponent,
+    UniversidadesComponent
   ],
   imports: [
     BrowserModule,

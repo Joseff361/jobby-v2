@@ -42,7 +42,8 @@ export class OfertaDetalleComponent implements OnInit {
 
     this.cargando = true;
 
-    let miPostulacion = new Postulacion(Number(this.sesionStorageService.obtenerId()), this.oferta.id);
+    let miPostulacion = new Postulacion(Number(this.sesionStorageService.obtenerIdTipo()), this.oferta.id);
+    console.log(miPostulacion)
     this.estudianteService.postularseAOferta(miPostulacion)
       .subscribe( data =>{
         this.cargando = false;
