@@ -5,6 +5,13 @@
       <div class="o-blog__header__left__subtitle">
         {{subtitulo}} 
       </div>
+      <div
+        *ngIf="isBlogger" 
+        class="o-blog__header__left__button"
+        routerLink="/blog-edit-panel"
+      >
+        Crear un Blog
+      </div>
     </div>
     <div class="o-blog__header__right">
       <img 
@@ -13,5 +20,41 @@
       />
     </div>
   </div>
-  <div class="o-blog__body">lobby</div>
+  <div class="o-blog__body">
+    <div class="o-blog__body__articles">
+      <div 
+        class="o-blog__body__articles__article"
+        *ngFor="let article of articles"
+      >
+        <div class="o-blog__body__articles__article__content">
+          <div class="o-blog__body__articles__article__content__title">
+            {{article.title}}
+          </div>
+          <div class="o-blog__body__articles__article__content__date">
+            {{article.createAt | date}}
+          </div>
+          <img 
+            [src]="article.img" 
+            alt=""
+            class="o-blog__body__articles__article__content__img"
+          >
+          <div class="o-blog__body__articles__article__content__content">
+            {{article.content}}
+          </div>
+          <div class="o-blog__body__articles__article__content__actions">
+            <div class="o-blog__body__articles__article__content__actions__button">
+              Leer
+            </div>
+            <div 
+              class="o-blog__body__articles__article__content__actions__button -editar"
+              *ngIf="isBlogger"
+              (click)="editBlog(article)"
+            >
+              Editar
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
