@@ -11,6 +11,7 @@ export class BlogService {
 
   baseURL: string = 'https://jobbyblogback.herokuapp.com';
   blog: Article;
+  readOnly: boolean;
 
   constructor(
     private http: HttpClient,

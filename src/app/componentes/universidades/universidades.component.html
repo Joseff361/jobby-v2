@@ -1,3 +1,5 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
 <section class="o-blog">
   <div class="o-blog__header">
     <div class="o-blog__header__left">
@@ -8,7 +10,7 @@
       <div
         *ngIf="isBlogger" 
         class="o-blog__header__left__button"
-        routerLink="/blog-edit-panel"
+        (click)="createBlog()"
       >
         Crear un Blog
       </div>
@@ -42,7 +44,10 @@
             {{article.content}}
           </div>
           <div class="o-blog__body__articles__article__content__actions">
-            <div class="o-blog__body__articles__article__content__actions__button">
+            <div 
+              class="o-blog__body__articles__article__content__actions__button"
+              (click)="readBlog(article)"
+            >
               Leer
             </div>
             <div 
