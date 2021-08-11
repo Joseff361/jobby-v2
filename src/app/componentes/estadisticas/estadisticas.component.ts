@@ -46,7 +46,7 @@ export class EstadisticasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    /*
     this.spinner.show();
     this.webscrapingService.obtenerEstadisticas()
       .subscribe( data => {
@@ -91,10 +91,10 @@ export class EstadisticasComponent implements OnInit {
           this.cantidadMarzo.push(oferta.cantidad);
         }
 
-        /****  ELIMNIAR LUEGO DE PRUEBA ****/
+        //  ELIMNIAR LUEGO DE PRUEBA 
         this.cantidadFebrero.push(10)
         this.cantidadFebrero.push(5)
-        /**** ELIMNIAR LUEGO DE PRUEBA ****/
+        //
 
 
         // ASIGNAR AL BARCHART
@@ -136,6 +136,7 @@ export class EstadisticasComponent implements OnInit {
     this.radarChartOptions = radarChartData;
     this.radarChartLabels = radarChartLabels;
     this.radarChartType = radarChartType;
+    */
   }
 
 }

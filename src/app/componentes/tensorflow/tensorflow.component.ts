@@ -42,6 +42,7 @@ export class TensorflowComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    /*
     this.spinner.show();
     this.webscrapingService.tensorflow()
       .subscribe( data => {
@@ -100,6 +101,7 @@ export class TensorflowComponent implements OnInit {
       this.doughnutChartType= doughnutChartType;
 
       this.spinner.hide();
+      */
   }
 
 }
