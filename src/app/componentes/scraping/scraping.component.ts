@@ -23,7 +23,6 @@ export class ScrapingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    /*
     this.spinner.show();
     this.webscrapingService.obtenerOfertasWebScraping()
       .subscribe( data => {
@@ -32,7 +31,6 @@ export class ScrapingComponent implements OnInit {
         console.log(err);
         this.spinner.hide();
       })
-      */
     this.spinner.show();
     this.empresaService.obtenerOferfasEmpleoTotales().subscribe(
       (data) => {

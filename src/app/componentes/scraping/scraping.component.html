@@ -1,82 +1,51 @@
-<ngx-spinner
-  bdColor="rgba(0, 0, 0, 0.8)"
-  size="medium"
-  color="#fff"
-  type="square-jelly-box"
-  [fullScreen]="true"
-  ><p style="color: white">Loading...</p></ngx-spinner
->
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 
 <div class="row my-5">
-  <div class="card">
-    <div class="card-body">
-      <!-- INFO -->
-      <div class="row my-4">
-        <h3>
-          Ofertas de Empleo <i class="fa fa-search" aria-hidden="true"></i>
-        </h3>
-        <h5>Encuentra ofertas de empleo segun tu perfil</h5>
-        <div class="my-4">
-          <label for="exampleInputEmail1" class="form-label"
-            >Filtrar Ofertas de empleo</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            Encuentra ofertas de empleo proveniente de las principales portales
-            de empleo
-          </div>
-        </div>
-      </div>
+    <div class="card">
+        <div class="card-body">
 
-      <!-- div class="row" *ngIf="listaDeOfertas" -->
-      <div class="row">
-        <div class="row">
-          <h3 class="mb-4">Ofertas Laborales Sugeridas</h3>
-        </div>
-        <!-- LISTA PREMIUM -->
-        <div *ngFor="let oferta of listaPremium" class="col-md-4">
-          <div
-            class="card mb-4 bg-warning text-black mx-auto"
-            style="max-width: 18rem"
-          >
-            <div class="card-header">{{ oferta.empresa.nombreDeEmpresa }}</div>
-            <div class="card-body">
-              <h5 class="card-title truncate-title">
-                {{ oferta.descripcion }}
-              </h5>
-              <div class="truncate-body">
-                <p class="card-title"><b>Area: </b>{{ oferta.area }}</p>
-                <p class="card-text">{{ oferta.lugar }}</p>
-                <footer class="blockquote-footer" style="color: black">
-                  {{ oferta.empresa.locacion }}
-                </footer>
-              </div>
-              <div class="de-flex">
-                <a
-                  (click)="ofertaDetalle(oferta)"
-                  target="_blank"
-                  class="btn btn-success"
-                >
-                  Ver detalles de oferta
-                </a>
-              </div>
+            <!-- INFO -->
+            <div class="row my-4">
+                <h3>Ofertas de Empleo <i class="fa fa-search" aria-hidden="true"></i></h3>
+                <h5>Encuentra ofertas de empleo segun tu perfil</h5>
+                <div class="my-4">
+                    <label for="exampleInputEmail1" class="form-label">Filtrar Ofertas de empleo</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Encuentra ofertas de empleo proveniente de las principales portales de empleo</div>
+                </div>
             </div>
-            <div class="card-footer">
-              Fecha de publicacion: {{ oferta.fecha | date }}
-            </div>
-          </div>
-        </div>
 
-        <!-- <div class="row">
+            <div class="row" *ngIf="listaDeOfertas">
+
+                <div class="row">
+                    <h3 class="mb-4">Ofertas Laborales Sugeridas</h3>
+                </div>
+                <!-- LISTA PREMIUM -->
+                <div *ngFor="let oferta of listaPremium" class="col-md-4">
+                    <div class="card mb-4 bg-warning text-black mx-auto" style="max-width: 18rem;">
+                        <div class="card-header">{{oferta.empresa.nombreDeEmpresa}}</div>
+                        <div class="card-body">
+                          <h5 class="card-title truncate-title">{{oferta.descripcion}}</h5>
+                          <div class="truncate-body">
+                            <p class="card-title"><b>Area: </b>{{oferta.area}}</p>
+                            <p class="card-text">{{oferta.lugar}}</p>
+                            <footer class="blockquote-footer" style="color: black;">{{oferta.empresa.locacion}}</footer>
+                          </div>
+                          <div class="de-flex">
+                            <a (click)="ofertaDetalle(oferta)" target="_blank"  class="btn btn-success">
+                                Ver detalles de oferta
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-footer">Fecha de publicacion: {{oferta.fecha | date}}</div>
+                    </div>
+                </div>
+
+                <div class="row">
                     <h3 class="mb-4">Ofertas Laborales</h3>
-                </div> -->
-        <!-- WEB SCRAPING-->
-        <!-- <div *ngFor="let oferta of listaDeOfertas | paginate: { itemsPerPage: 12, currentPage: p }" class="col-md-4">
+                </div>
+                <!-- WEB SCRAPING-->
+                <div *ngFor="let oferta of listaDeOfertas | paginate: { itemsPerPage: 12, currentPage: p }" class="col-md-4">
                     <div class="card mb-4 mx-auto" style="max-width: 18rem;">
                         <div class="card-header">{{oferta.empresa}}</div>
                         <div class="card-body">
@@ -93,13 +62,13 @@
                         </div>
                         <div class="card-footer">{{oferta.time_publicacion}}</div>
                     </div>
-                </div> -->
+                </div>
 
-        <!-- PAGINACION 
-        <div class="text-center">
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>-->
-      </div>
+                <!-- PAGINACION -->
+               <div class="text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+               </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -19,21 +19,21 @@
 
       &__title {
         font-size: 80px;
-        color: #6B8FDD;
-        text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        color: #6b8fdd;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
       }
 
-      &__subtitle{
+      &__subtitle {
         text-align: justify;
       }
 
       &__button {
-        color: #F55D34;
+        color: #f55d34;
         cursor: pointer;
         font-size: 30px;
 
         &:hover {
-          color: #8C6238;
+          color: #8c6238;
         }
       }
     }
@@ -57,7 +57,7 @@
     width: 100%;
     justify-content: center;
 
-    &__articles{
+    &__articles {
       display: flex;
       margin: 0px -8px;
       flex-wrap: wrap;
@@ -68,16 +68,16 @@
         width: 33%;
         max-width: 33%;
         padding-left: 8px;
-        
-        &__content{
+
+        &__content {
           border: 1px solid rgb(203, 212, 221);
-          box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
           padding: 15px;
           margin: 15px;
           border-radius: 8px;
           height: 450px;
 
-          &__title{
+          &__title {
             display: flex;
             align-items: center;
             text-align: center;
@@ -85,7 +85,7 @@
             height: 70px;
           }
 
-          &__date{
+          &__date {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -94,11 +94,11 @@
             height: 30px;
           }
 
-          &__img{
+          &__img {
             width: 100%;
           }
 
-          &__content{
+          &__content {
             margin-top: 10px;
             display: -webkit-box;
             max-width: 100%;
@@ -128,15 +128,34 @@
             }
           }
 
-
-
-
           transition: 0.4s;
 
           &:hover {
             transform: scale(1.05);
           }
+        }
+      }
+    }
+  }
+}
 
+@media only screen and (max-width: 992px) {
+  .o-blog {
+    &__header {
+      &__left {
+        flex: 1;
+      }
+
+      &__right {
+        display: none;
+      }
+    }
+
+    &__body {
+      &__articles {
+        &__article {
+          width: 100%;
+          max-width: 100%;
         }
       }
     }
